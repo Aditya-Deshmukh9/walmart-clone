@@ -1,3 +1,5 @@
+import { Result } from "@/typings/PageTypes";
+
 async function fetchProduct(url: string) {
   const username = process.env.OXYLABS_USERNAME;
   const password = process.env.OXYLABS_PASSWORD;

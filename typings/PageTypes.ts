@@ -1,14 +1,19 @@
-type Rating = {
-  count: number;
-  rating: number;
-};
-
-type Meta = {
+export interface Meta {
   sku: string;
   gtin: string | null;
-};
+}
 
-type Content = {
+export interface Rating {
+  count: number;
+  rating: number;
+}
+
+export interface Specification {
+  key: string;
+  value: string;
+}
+
+export interface Content {
   url: string;
   meta: Meta;
   price: number;
@@ -18,11 +23,26 @@ type Content = {
   _warnings: string[];
   breadcrumbs: string[];
   description: string;
-  specifications: { key: string; value: string }[];
+  specifications: Specification[];
+  images: string[];
   parse_status_code: number;
-};
+}
+export interface Product {
+  url: string;
+  meta: Meta;
+  price: number;
+  title: string;
+  rating: Rating;
+  currency: string;
+  _warnings: string[];
+  breadcrumbs: string[];
+  description: string;
+  specifications: Specification[];
+  images: string[];
+  parse_status_code: number;
+}
 
-type Result = {
+export interface Result {
   content: Content;
   created_at: string;
   updated_at: string;
@@ -31,8 +51,8 @@ type Result = {
   job_id: string;
   status_code: number;
   parser_type: string;
-};
+}
 
-type ApiResponse = {
+export interface WalmartAPIResponse {
   results: Result[];
-};
+}

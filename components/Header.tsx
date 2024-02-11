@@ -12,20 +12,25 @@ import {
 } from "lucide-react";
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { getCartTotal } from "@/lib/getCartTotal";
+import { useCartStore } from "@/store";
 
 function Header() {
   const router = useRouter();
+  const cart = useCartStore((state) => state.cart)
+  const total = getCartTotal(cart)
+
+  console.log(total);
+
 
   const handlesubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const input = e.currentTarget.input.value;
 
     console.log(input);
     if (input) {
       router.push(`search?q=${input}`);
     }
-
   };
 
   return (
@@ -90,13 +95,16 @@ function Header() {
           </div>
         </Link>
         <Link
-          href={"/"}
+          href={"/basket"}
           className=" flex text-white font-bold items-center space-x-2 text-sm"
         >
           <ShoppingCart size={20} />
           <div>
-            <p className="text-xs font-extralight">My Items</p>
-            <p>$0.00</p>
+            <p className="text-xs font-extralight">
+              {cart.length > 0 ? `${cart.length} items` : "My Cart"}
+            </p>
+
+            <p>{cart.length > 0 ? `${total}` : "0.00"}</p>
           </div>
         </Link>
       </div>
