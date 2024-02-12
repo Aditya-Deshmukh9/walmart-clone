@@ -2,9 +2,9 @@ export interface SearchResult {
   results: Result[];
   total_results: number;
   last_visible_page: number;
-  parse_status_code: number;
-  created_at: number;
-  update_at: string;
+  parse_statud_code: number;
+  created_at: string;
+  updated_at: string;
   page: number;
   url: string;
   job_id: string;
@@ -13,7 +13,7 @@ export interface SearchResult {
 }
 
 export interface Result {
-  content: Content[];
+  content: Content;
 }
 
 export interface Content {
@@ -35,7 +35,6 @@ export interface Organic {
   badge?: string;
   variants: Variant[];
 }
-
 export interface Price {
   price: number;
   currency: string;
@@ -52,12 +51,6 @@ export interface Seller {
 
 export interface Variant {
   url: string;
-  title: string;
-  product_id: string;
-}
-
-export interface Context {
-  key: string;
   value: any;
 }
 
@@ -67,7 +60,12 @@ export interface Link {
   method: string;
 }
 
-export interface Job {
+export interface Context {
+  key: string;
+  value: any;
+}
+
+export interface job {
   callback_url: string;
   client_id: number;
   context: Context[];
@@ -92,7 +90,7 @@ export interface Job {
   storage_type: string;
   subdomain: string;
   content_encoding: string;
-  updata_at: string;
+  updatad_at: string;
   user_agent_type: string;
   session_info: string | null;
   statuses: any[];

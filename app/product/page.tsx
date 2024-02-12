@@ -38,7 +38,7 @@ async function Productpage({ searchParams: { url } }: Props) {
         <div className="p-4 lg:p-4 flex flex-col lg:flex-row w-full">
 
             <div className="hidden lg:inline space-y-4">
-                {product.images.map((image, i) => (
+                {product.images.map((image, i: number) => (
                     <Image
                         key={image}
                         src={image}
@@ -59,7 +59,7 @@ async function Productpage({ searchParams: { url } }: Props) {
                 <CarouselContent>
                     {
 
-                        product.images.map((image, i) => (
+                        product.images.map((image, i: number) => (
                             <CarouselItem key={i}>
                                 <div className="p-1">
                                     <div className="flex aspect-square items-center justify-center p-2 relative">
@@ -85,7 +85,7 @@ async function Productpage({ searchParams: { url } }: Props) {
                 <h1 className="text-3xl font-bold">{product.title}</h1>
 
                 <div className="space-x-2">
-                    {product.breadcrumbs.map((breadcrumb, i) => (
+                    {product.breadcrumbs.map((breadcrumb, i: number) => (
                         <Badge
                             key={breadcrumb + i}
                             className={breadcrumb}

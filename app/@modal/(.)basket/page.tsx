@@ -7,7 +7,6 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
 import { useRouter } from "next/navigation";
 
@@ -29,7 +28,7 @@ function BasketInterseption() {
                 }
             }}
         >
-            <DialogContent className="h-4/5 w-full overflow-scroll max-w-3xl scroll-smooth">
+            <DialogContent className="h-4/5 w-full overflow-scroll max-w-3xl">
                 <DialogHeader>
                     <DialogTitle>Basket</DialogTitle>
                     <DialogDescription>

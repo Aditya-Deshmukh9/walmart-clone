@@ -1,17 +1,17 @@
 import fetchSearch from "@/lib/fetchSearch";
 import Product from "@/components/Product";
+import { Organic } from "@/typings/SearchTypes"
 
 type Props = {
     searchParams: {
-        q: string
+        q: string;
     }
 }
 
 async function Searchpage({ searchParams: { q } }: Props) {
     const results = await fetchSearch(q)
-    console.log(q);
 
-    console.log("results", results?.content);
+
     return (
         <div className="p-10">
             <h1 className="text-3xl font-bold mb-2">Results for {q}</h1>
@@ -20,10 +20,13 @@ async function Searchpage({ searchParams: { q } }: Props) {
             </h2>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                {results?.content.organic.map(product =>
-                    <li key={product.product_id}>
+                {results?.content.organic.map((product: Organic, index: number) =>
+                    <li key={index}>
                         <Product product={product} />
                     </li>)}
+                {
+
+                }
             </ul>
 
         </div>

@@ -16,7 +16,9 @@ export interface Specification {
 export interface Content {
   url: string;
   meta: Meta;
+  total_results: number | null;
   price: number;
+
   title: string;
   rating: Rating;
   currency: string;

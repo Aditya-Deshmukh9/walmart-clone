@@ -28,7 +28,7 @@ async function fetchSearch(searchTerm: string) {
     .then((data) => {
       if (data.results.length === 0) return;
       const result: Result = data.results[0];
-
+      console.log(data.results[0]);
       return result;
     })
     .catch((err) => console.log(err));
