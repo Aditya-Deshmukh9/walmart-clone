@@ -8,11 +8,13 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
+import { useCartStore } from "@/store";
 import { useRouter } from "next/navigation";
 
 
 function BasketInterseption() {
     const router = useRouter()
+    const cart = useCartStore((state) => state.cart)
 
     function onDismiss() {
         router.back();
@@ -33,6 +35,9 @@ function BasketInterseption() {
                     <DialogTitle>Basket</DialogTitle>
                     <DialogDescription>
                         <p className="text-2xl">Contents of your Basket</p>
+                        <p className="text-xl sm:text-xs font-light text-black">
+                            {cart.length > 0 ? `${cart.length} items` : "My Cart"}
+                        </p>
                     </DialogDescription>
                 </DialogHeader>
                 <Basket />

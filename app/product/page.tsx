@@ -30,8 +30,6 @@ type Props = {
 async function Productpage({ searchParams: { url } }: Props) {
 
     const product = await fetchProduct(url)
-    console.log(product);
-
     if (!product) return notFound();
 
     return (
@@ -96,10 +94,6 @@ async function Productpage({ searchParams: { url } }: Props) {
                     ))}
                 </div>
 
-                <div className="py-5" dangerouslySetInnerHTML={{ __html: product.description }}>
-
-                </div>
-
                 {
                     product.rating && (
                         <p className="text-yellow-500 px-2 rounded-md inline-block border text-sm">
@@ -111,12 +105,20 @@ async function Productpage({ searchParams: { url } }: Props) {
                     )
                 }
 
+
                 <p className="text-2xl font-bold mt-2">
                     ₹
                     {typeof product.price === 'number' ? (Math.floor(product.price * 83)).toLocaleString() : null}
                 </p>
 
                 <AddToCart product={product} />
+
+                <hr />
+
+                <div className="py-5" dangerouslySetInnerHTML={{ __html: product.description }}>
+
+                </div>
+
 
                 <hr />
 

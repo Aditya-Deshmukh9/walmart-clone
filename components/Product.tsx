@@ -2,6 +2,7 @@ import { Organic } from "@/typings/SearchTypes"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
+import PriceConverter from "@/components/PriceConvert"
 
 function Product({ product }: { product: Organic }) {
     return (
@@ -19,8 +20,7 @@ function Product({ product }: { product: Organic }) {
             />
 
             <p className="text-xl font-bold">
-                ₹
-                {typeof product.price.price === 'number' ? (Math.floor(product.price.price * 83)).toLocaleString() : null}
+                ₹ <PriceConverter price={product.price.price} />
             </p>
 
             {product.badge && (
@@ -37,6 +37,7 @@ function Product({ product }: { product: Organic }) {
                     <span className="text-gray-600 ml-2">{product.rating.count}</span>
                 </p>
             )}
+
         </Link>
     )
 }

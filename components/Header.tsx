@@ -20,7 +20,6 @@ function Header() {
   const cart = useCartStore((state) => state.cart)
   const total = getCartTotal(cart)
 
-  console.log(total);
 
 
   const handlesubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -34,8 +33,8 @@ function Header() {
   };
 
   return (
-    <header className="flex flex-col justify-center md:flex-row items-center bg-walmart px-4   py-3 sm:space-x-7 md:space-x-7">
-      <Link href="/" className="mb-5 md:mb-0 ">
+    <header className="flex flex-col justify-center md:flex-row items-center bg-walmart px-4   py-3 sm:space-x-7 md:space-x-7 ">
+      <Link href="/" className="sm:mb-5 mb-2 md:mb-0 ">
         <Image
           src="https://i.imgur.com/5V4wehM.png"
           alt="logo"
@@ -59,7 +58,7 @@ function Header() {
         </button>
       </form>
 
-      <div className="flex space-x-5 mt-5 md:mt-0">
+      <div className="flex space-x-5 sm:mr-0 md:mr-0 mr-4 mt-5 md:mt-0">
         <Link
           href={"/"}
           className="hidden xl:flex text-white font-bold items-center space-x-2 text-sm"

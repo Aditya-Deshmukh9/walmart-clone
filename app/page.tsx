@@ -16,7 +16,7 @@ export default function page() {
         />
         <GridOption
           title="Shop Home"
-          image="https://links.papareact.com/S2u"
+          image="/public/rose.webp"
           className="bg-pink-200 row-span-2"
         />
         <GridOption

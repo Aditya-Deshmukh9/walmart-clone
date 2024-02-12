@@ -9,11 +9,8 @@ function AddToCart({ product }: { product: Product }) {
   const [cart, addToCart] = useCartStore((state) => [state.cart,
   state.addToCart])
 
-  console.log(cart);
-
   const ProductCartLength = cart.filter((item) => item.meta.sku === product.meta.sku).length
 
-  console.log("How many in cart", ProductCartLength);
 
   const handleAdd = () => {
     addToCart(product);

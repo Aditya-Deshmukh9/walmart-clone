@@ -2,6 +2,7 @@ import fetchSearch from "@/lib/fetchSearch";
 import Product from "@/components/Product";
 import { Organic } from "@/typings/SearchTypes"
 
+
 type Props = {
     searchParams: {
         q: string;
@@ -9,6 +10,7 @@ type Props = {
 }
 
 async function Searchpage({ searchParams: { q } }: Props) {
+
     const results = await fetchSearch(q)
 
 
@@ -24,9 +26,6 @@ async function Searchpage({ searchParams: { q } }: Props) {
                     <li key={index}>
                         <Product product={product} />
                     </li>)}
-                {
-
-                }
             </ul>
 
         </div>

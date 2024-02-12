@@ -12,8 +12,6 @@ function Basket() {
     const grouped = groupBySku(cart)
     const basketTotal = getCartTotal(cart)
 
-    console.log(cart);
-    console.log(grouped);
 
     return (
         <div className="max-w-7xl mx-auto">
@@ -34,7 +32,7 @@ function Basket() {
                                 />
                             )}
 
-                            <div className="flex space-x-4 pl-4">
+                            <div className="flex  flex-col sm:flex-row space-x-4 pl-4">
                                 <div>
                                     <p className="line-clamp-2 font-bold">{item.title}</p>
                                     <div dangerouslySetInnerHTML={{ __html: item.description }} className="line-clamp-1 font-light text-sm mt-2" />
