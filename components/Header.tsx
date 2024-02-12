@@ -34,7 +34,7 @@ function Header() {
   };
 
   return (
-    <header className="flex flex-col md:flex-row items-center bg-walmart px-4 py-3 space-x-7">
+    <header className="flex flex-col justify-center md:flex-row items-center bg-walmart px-4   py-3 sm:space-x-7 md:space-x-7">
       <Link href="/" className="mb-5 md:mb-0 ">
         <Image
           src="https://i.imgur.com/5V4wehM.png"
@@ -46,7 +46,7 @@ function Header() {
 
       <form
         onSubmit={handlesubmit}
-        className="flex items-center flex-1 rounded-full bg-white w-full"
+        className="flex items-center justify-center  flex-1 rounded-full bg-white w-full"
       >
         <input
           type="text"
