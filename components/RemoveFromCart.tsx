@@ -9,11 +9,8 @@ function RemoveFromCart({ product }: { product: Product }) {
     )
 
     const handleRemove = () => {
-        console.log("remove from cart", product.meta.sku);
         removeFromCart(product)
     }
-
-
 
     return (
         <Button className="bg-walmart hover:bg-walmart/50" onClick={handleRemove}>-</Button>

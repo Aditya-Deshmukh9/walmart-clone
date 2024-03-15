@@ -6,6 +6,7 @@ import { useCartStore } from "@/store"
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 import { Button } from "./ui/button"
+import CartRemoveall from "./CartRemoveall"
 
 function Basket() {
     const cart = useCartStore((state) => state.cart)
@@ -43,8 +44,6 @@ function Basket() {
                                     <p className="mt-4 font-bold text-right">{total}</p>
                                 </div>
                             </div>
-
-
                         </li>
                     );
                 })}
@@ -58,6 +57,7 @@ function Basket() {
                 <Button className="mt-5 h-10 bg-walmart hover:bg-walmart/50">
                     Checkout
                 </Button>
+                <CartRemoveall />
             </div>
 
         </div>

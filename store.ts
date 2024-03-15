@@ -7,6 +7,7 @@ interface CartSlice {
   cart: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
+  clearCart: () => void;
 }
 
 export const useCartStore = create<CartSlice>()(
@@ -30,6 +31,9 @@ export const useCartStore = create<CartSlice>()(
             newCart.splice(productremove, 1);
             return { cart: newCart };
           });
+        },
+        clearCart: () => {
+          set({ cart: [] }); // Clear the cart by setting it to an empty array
         },
       }),
       {
